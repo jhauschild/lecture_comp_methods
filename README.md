@@ -8,8 +8,11 @@ The codes are organized in folders by topics, since some of the exercises build 
 
 For some exercise, we provide some codes implementing various algorithms, as pure python 3 files with `*.py` filenames,
 and some data files, included in the folder `exercises`.
-The solutions to the exercise are provided as jupyter notebooks (formerly known as ipython notebooks), with `*.ipynb` filenames.
+The solutions to the exercise are provided as jupyter notebooks (formerly known as ipython notebooks), with `sol*.ipynb` filenames.
 If the exercise asked to modify a function, it is copied into the notebook, leaving the original templates `*.py` untouched as provided on the course webpage.
+
+## Setup
+If you are completely new to python, a good introduction for our course are the scipy lectures
 
 If you have a laptop, a very good python distribution is provided by Anaconda, available at https://www.anaconda.com/download. It ships with jupyter, uses Intel MKL and comes with the numba package. 
 
@@ -30,3 +33,11 @@ To start a jupyter notebook, follow these steps:
 5. Once you're done, stop the server in the terminal by pressing Ctrl-C and confirm with 'y'
 
 We use the ipython magic `%matplotlib inline` to include plots showing the results directly in the notebooks.
+
+# Further references
+
+- Introduction to Python, https://www.scipy-lectures.org/
+- Lecture Notes by Anders W. Sandvik, http://arxiv.org/abs/1101.3281v1
+- Lecture Notes by Johannes Hauschild, Frank Pollmann, https://arxiv.org/abs/1805.00055
+- Review on DMRG by Ulrich Schollwoeck, http://arxiv.org/abs/1008.3477
+- Online book by Michael Nielsen, http://neuralnetworksanddeeplearning.com
