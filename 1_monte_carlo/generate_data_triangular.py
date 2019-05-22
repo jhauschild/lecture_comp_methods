@@ -26,8 +26,10 @@ def init_system(Lx, Ly):
             n = xy_to_n(x, y)
             m1 = xy_to_n((x+1)% Lx, y)
             m2 = xy_to_n(x, (y+1) % Ly)
+            m3 = xy_to_n((x+1) % Lx, (y+1) % Ly)
             bonds.append([n, m1])
             bonds.append([n, m2])
+            bonds.append([n, m3])
     bonds = np.array(bonds)
     spins = np.random.randint(0, 2, size=(N,))*2 - 1
     return spins, bonds, N
@@ -176,17 +178,17 @@ def load_data(filename):
 
 
 if __name__ == "__main__":
-    #Tc_guess = None
-    Tc_guess = 2.27   # good guess for the 2D Ising model; uncomment this to get
+    Tc_guess = None
+    Tc_guess = 3.65   # good guess for the 2D Ising model; uncomment this to get
                       # many T-points around this value for large L (-> long runtime!)
     if Tc_guess is None:
         N_measure = 1000  # just a quick guess
         Ls = [8, 16, 32]
-        output_filename = 'data_ising_square.pkl'
+        output_filename = 'data_ising_triangular.pkl'
     else:
         N_measure = 50000
-        Ls = [8, 16, 32, 64, 128, 256]
-        output_filename = 'data_ising_square_largeL.pkl'
+        Ls = [8, 16, 32, 64]
+        output_filename = 'data_ising_triangular_largeL.pkl'
     data = dict()
     for L in Ls:
         if Tc_guess is None:
@@ -194,8 +196,8 @@ if __name__ == "__main__":
             Ts = np.linspace(1., 4., 50)
         else:
             # choose T-values L-dependent: more points around Tc
-            Ts = np.linspace(Tc_guess - 0.5, Tc_guess + 0.5, 25)
-            Ts = np.append(Ts, np.linspace(Tc_guess - 8./L, Tc_guess + 8./L, 50))
+            Ts = np.linspace(Tc_guess - 0.5, Tc_guess + 0.5, 11)
+            Ts = np.append(Ts, np.linspace(Tc_guess - 8./L, Tc_guess + 8./L, 40))
             Ts = np.sort(Ts)[::-1]
         data[L] = gen_data_L(Ts, L, N_measure)
     data['Ls'] = Ls
