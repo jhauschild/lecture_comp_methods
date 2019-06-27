@@ -3,7 +3,7 @@
 Authors: Prof. Frank Pollmann, Prof. Michael Knap, Johannes Hauschild
 
 This is a set of tutorial codes and exercises for the lecture *Compuational Methods in Many-Body Physics* given at TU Munich in the summer term 2018.
-Lecture notes, exercise sheets and further references are available at the course web page: https://www.cmt.ph.tum.de/index.php?id=65
+Lecture notes, exercise sheets and further references are available at the course web page: https://www.cmt.ph.tum.de/index.php?id=65 (Password for the lecture notes upon request by Email)
 The codes are organized in folders by topics, since some of the exercises build on previous codes.
 
 For some exercise, we provide some codes implementing various algorithms, as pure python 3 files with `*.py` filenames,
