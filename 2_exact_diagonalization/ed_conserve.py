@@ -101,7 +101,7 @@ def calc_H(N, J, g):
                 if sb in ind_in_basis[qn]:
                     b = ind_in_basis[qn][sb]
                     Rb = basis[qn][b][1]
-                    k = qn*2*np.pi/Ra
+                    k = qn*2*np.pi/N
                     H_block_data.append(-J*np.exp(-1j*k*l)*np.sqrt(Ra/Rb))
                     H_block_inds.append((b, a))
                 # else: flipped state incompatible with the k value, |b(k)> is zero
