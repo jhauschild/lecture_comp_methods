@@ -28,8 +28,7 @@ class HEffective(scipy.sparse.linalg.LinearOperator):
         chi1, chi2 = LP.shape[0], RP.shape[2]
         d1, d2 = W1.shape[2], W2.shape[2]
         self.theta_shape = (chi1, d1, d2, chi2)  # vL i j vR
-        self.shape = (chi1 * d1 * d2 * chi2, chi1 * d1 * d2 * chi2)
-        self.dtype = W1.dtype
+        super().__init__(dtype=W1.dtype, shape=(chi1 * d1 * d2 * chi2, chi1 * d1 * d2 * chi2))
 
     def _matvec(self, theta):
         """calculate |theta'> = H_eff |theta>"""
